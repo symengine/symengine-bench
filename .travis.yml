@@ -1,0 +1,15 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t symengine/ubuntu_base ./ubuntu_base
+  - docker build -t symengine/conda_base ./conda_base
+
+script:
+  - docker run symengine/ubuntu_base id
+  - docker run symengine/conda_base id
+
+notifications:
+  email: false
