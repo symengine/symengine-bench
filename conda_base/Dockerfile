@@ -7,10 +7,11 @@ RUN sudo apt-get update && DEBIAN_FRONTEND=noninteractive \
     && sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && hash -r
 
+ENV	PATH="/home/swuser/conda_root/bin:$PATH"
+
 RUN wget --no-check-certificate https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh && \
     bash miniconda.sh -b -p $HOME/conda_root && \
     rm miniconda.sh && \
-	export PATH="$HOME/conda_root/bin:$PATH" && \
 	conda config --set always_yes yes --set changeps1 no && \
 	conda config --add channels conda-forge --force && \
 	conda info -a && \
