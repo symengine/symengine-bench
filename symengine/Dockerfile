@@ -13,3 +13,5 @@ RUN GIT_SSL_NO_VERIFY=true git clone https://github.com/symengine/symengine && \
     cd symengine && \
     cmake . && \
     make
+
+COPY run_bench.py symengine/benchmarks
