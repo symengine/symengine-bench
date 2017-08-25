@@ -12,6 +12,9 @@ script:
   - docker run symengine/ubuntu_base id
   - docker run symengine/conda_base id
   - docker run symengine/symengine symengine/benchmarks/expand2
+  - docker run symengine/symengine which python
+  - docker run symengine/symengine python --version
+  - docker run -t symengine/symengine bash -c "cd symengine/benchmarks && python run_bench.py && cat data.json"
 
 notifications:
   email: false
