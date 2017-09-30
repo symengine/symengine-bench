@@ -15,4 +15,5 @@ RUN wget --no-check-certificate https://repo.continuum.io/miniconda/Miniconda3-l
 	conda config --set always_yes yes --set changeps1 no && \
 	conda config --add channels conda-forge --force && \
 	conda info -a && \
-	conda update -q -n root conda
+	conda update -q -n root conda && \
+    conda clean --all
