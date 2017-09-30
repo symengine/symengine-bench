@@ -7,7 +7,8 @@ RUN sudo apt-get update && DEBIAN_FRONTEND=noninteractive \
     && sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && hash -r
 
-RUN conda install python=3.6 jupyter matplotlib
+RUN conda install python=3.6 jupyter matplotlib && \
+    conda clean --all
 
 RUN GIT_SSL_NO_VERIFY=true git clone https://github.com/symengine/symengine && \
     cd symengine && \
