@@ -25,3 +25,8 @@ docker build -t symengine/symengine:$COMMIT --build-arg COMMIT=$COMMIT ./symengi
 docker run -t -v `pwd`:/opt/ symengine/symengine:$COMMIT bash run_copy.sh
 cp data.json data-$COMMIT.json
 ```
+And locally execute the `Plot-two.ipynb` notebook:
+```
+jupyter notebook Plot-two.ipynb
+```
+Which will plot the two `data-*.json` files.
