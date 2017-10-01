@@ -17,4 +17,5 @@ RUN GIT_SSL_NO_VERIFY=true git clone https://github.com/symengine/symengine && \
     make
 
 COPY run_bench.py symengine/benchmarks
+COPY run_copy.sh .
 COPY Plots.ipynb .
