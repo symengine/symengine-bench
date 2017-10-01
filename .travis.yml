@@ -15,6 +15,7 @@ script:
   - docker run symengine/symengine which python
   - docker run symengine/symengine python --version
   - docker run -t symengine/symengine bash -c "cd symengine/benchmarks && python run_bench.py && cat data.json"
+  - docker run -t symengine/symengine jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=300 --output out_file Plots.ipynb
 
 notifications:
   email: false
